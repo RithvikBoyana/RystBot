@@ -1,24 +1,12 @@
 from ast import alias
 import discord
 from discord.ext import commands
-import json
 import os
 from dotenv import load_dotenv
 
 load_dotenv()
 
-if os.path.exists(os.getcwd() + "/config.json"):
-    with open("./config.json") as f:
-        configData = json.load(f)
-else:
-    configTemplate = {"Token": "", "Prefix": "."}
-    with open(os.getcwd() + "/config.json", "w+") as f:
-        json.dump(configTemplate, f)
-
-token = configData["Token"]
-prefix = configData["Prefix"]
-
-client = commands.Bot(command_prefix = prefix)
+client = commands.Bot(command_prefix = '.')
 client.remove_command('help')
 
 from help_cog import help_cog
