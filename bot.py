@@ -3,6 +3,9 @@ import discord
 from discord.ext import commands
 import json
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 if os.path.exists(os.getcwd() + "/config.json"):
     with open("./config.json") as f:
@@ -81,4 +84,4 @@ async def unban(ctx, *, member : commands.MemberConverter):
             return
     await ctx.reply('User is either not banned or not found')
 
-client.run(token)
+client.run(os.getenv('TOKEN'))
