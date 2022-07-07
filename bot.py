@@ -3,6 +3,7 @@ import discord
 from discord.ext import commands
 import os
 from dotenv import load_dotenv
+from os import getenv
 
 load_dotenv()
 
@@ -72,4 +73,4 @@ async def unban(ctx, *, member : commands.MemberConverter):
             return
     await ctx.reply('User is either not banned or not found')
 
-client.run(os.getenv('TOKEN'))
+client.run(getenv('TOKEN'))
