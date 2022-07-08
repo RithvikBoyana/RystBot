@@ -72,5 +72,4 @@ async def unban(ctx, *, member : commands.MemberConverter):
             return
     await ctx.reply('User is either not banned or not found')
 
-# client.run(os.getenv('TOKEN'))
 client.run(os.environ['BOT_TOKEN'])
