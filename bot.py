@@ -37,8 +37,8 @@ async def ping(ctx):
     await ctx.reply(f'{round(client.latency * 1000)}ms')
 
 @client.command(name="npc", help="Returns Omni")
-async def ping(ctx, member=627964932394188851):
-    m = commands.MemberConverter().convert(ctx, member)
+async def ping(ctx):
+    m = client.get_user(627964932394188851)
     await ctx.reply(f'{m} is an npc')
 
 @client.command(name="clear", aliases=["c"], help="Clears a specified number of messages in a channel or 10 by default")
