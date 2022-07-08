@@ -3,6 +3,11 @@ import discord
 from discord.ext import commands
 import os
 from dotenv import load_dotenv
+import ctypes
+import ctypes.util
+
+find_opus = ctypes.util.find_library('opus')
+discord.opus.load_opus(find_opus)
 
 load_dotenv()
 

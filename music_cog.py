@@ -2,6 +2,11 @@ from ast import alias
 import discord
 from discord.ext import commands
 from youtube_dl import YoutubeDL
+import ctypes
+import ctypes.util
+
+find_opus = ctypes.util.find_library('opus')
+discord.opus.load_opus(find_opus)
 
 class music_cog(commands.Cog):
     def __init__(self, bot):
